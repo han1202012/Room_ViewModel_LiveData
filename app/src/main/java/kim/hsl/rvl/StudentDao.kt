@@ -1,11 +1,8 @@
 package kim.hsl.rvl
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+
 
 /**
  * 数据库访问对象接口 / 使用 @Dao 注解修饰
