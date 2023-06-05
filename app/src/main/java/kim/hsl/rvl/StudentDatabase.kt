@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
-@Database(entities = [Student::class], version = 2, exportSchema = false)
+@Database(entities = [Student::class], version = 3, exportSchema = false)
 abstract class StudentDatabase: RoomDatabase() {
     /**
      * 获取 数据库访问 对象
@@ -49,6 +49,7 @@ abstract class StudentDatabase: RoomDatabase() {
                         "student_database.db")
                         .addMigrations(MIGRATION_1_2)
                         .addMigrations(MIGRATION_2_3)
+                        .fallbackToDestructiveMigration()
                         .allowMainThreadQueries() // Room 原则上不允许在主线程操作数据库
                                                   // 如果要在主线程操作数据库需要调用该函数
                         .build()
