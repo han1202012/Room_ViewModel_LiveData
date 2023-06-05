@@ -25,7 +25,7 @@ abstract class StudentDatabase: RoomDatabase() {
         val MIGRATION_1_2: Migration = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 Log.i("Room_StudentDatabase", "数据库版本 1 升级到 版本 2")
-                database.execSQL("alter table student add column sex integer not null default 1")
+                database.execSQL("alter table student add column degree integer not null default 1")
             }
         }
 
@@ -48,6 +48,7 @@ abstract class StudentDatabase: RoomDatabase() {
                         StudentDatabase::class.java,
                         "student_database.db")
                         .addMigrations(MIGRATION_1_2)
+                        .addMigrations(MIGRATION_2_3)
                         .allowMainThreadQueries() // Room 原则上不允许在主线程操作数据库
                                                   // 如果要在主线程操作数据库需要调用该函数
                         .build()
