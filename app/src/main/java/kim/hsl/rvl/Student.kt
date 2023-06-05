@@ -45,6 +45,14 @@ class Student {
     var sex: Int = 0
 
     /**
+     * degree字段
+     * 数据库表中的列名为 sex
+     * 数据库表中的类型为 INTEGER 文本类型
+     */
+    @ColumnInfo(name = "degree", typeAffinity = ColumnInfo.INTEGER)
+    var degree: Int = 0
+
+    /**
      * 有些属性用于做业务逻辑
      * 不需要插入到数据库中
      * 使用 @Ignore 注解修饰该属性字段
