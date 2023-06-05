@@ -39,10 +39,18 @@ class Student {
     /**
      * 性别字段
      * 数据库表中的列名为 sex
+     * 数据库表中的类型为 TEXT 文本类型
+     */
+    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.TEXT)
+    var sex: String = "M"
+
+    /**
+     * 性别字段
+     * 数据库表中的列名为 sex
      * 数据库表中的类型为 INTEGER 文本类型
      */
-    @ColumnInfo(name = "sex", typeAffinity = ColumnInfo.INTEGER)
-    var sex: Int = 0
+    /*@ColumnInfo(name = "sex", typeAffinity = ColumnInfo.INTEGER)
+    var sex: Int = 0*/
 
     /**
      * degree字段
