@@ -25,7 +25,7 @@ abstract class StudentDatabase: RoomDatabase() {
         val MIGRATION_1_2: Migration = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 Log.i("Room_StudentDatabase", "数据库版本 1 升级到 版本 2")
-                database.execSQL("alter table student add column degree integer not null default 1")
+                database.execSQL("alter table student add column sex integer not null default 1")
             }
         }
 
@@ -35,7 +35,7 @@ abstract class StudentDatabase: RoomDatabase() {
         val MIGRATION_2_3: Migration = object : Migration(2, 3) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 Log.i("Room_StudentDatabase", "数据库版本 2 升级到 版本 3")
-                database.execSQL("alter table student add column address integer not null default 1")
+                database.execSQL("alter table student add column degree integer not null default 1")
             }
         }
 
